@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="poker_main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guilogger.PlanningPokerController">
@@ -31,7 +32,7 @@
          </font>
       </Label>
       <Label layoutX="55.0" layoutY="316.0" text="Team Entry:" />
-      <Button fx:id="filterButton" layoutX="57.0" layoutY="355.0" mnemonicParsing="false" onAction="#filterDetails" text="Filter Details">
+      <Button fx:id="filterButton" layoutX="55.0" layoutY="360.0" mnemonicParsing="false" onAction="#filterDetails" text="Filter Details">
          <font>
             <Font size="13.0" />
          </font>
@@ -52,7 +53,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="414.0" layoutY="290.0" text="Team:">
+      <Label layoutX="413.0" layoutY="353.0" text="Team:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -70,37 +71,37 @@
       </Button>
       <Label fx:id="projectName" layoutX="399.0" layoutY="87.0" />
       <Label fx:id="dataFile" layoutX="505.0" layoutY="87.0" />
-      <Label fx:id="Employee1" layoutX="441.0" layoutY="346.0" />
-      <Label fx:id="Cats" layoutX="550.0" layoutY="346.0" />
-      <Label fx:id="weight4" layoutX="649.0" layoutY="346.0" />
-      <Label fx:id="Employee2" layoutX="441.0" layoutY="373.0" />
-      <Label fx:id="Dogs" layoutX="548.0" layoutY="374.0" />
-      <Label fx:id="weightSec4" layoutX="649.0" layoutY="373.0" />
-      <Label fx:id="Employee3" layoutX="441.0" layoutY="399.0" />
-      <Label fx:id="Fish" layoutX="551.0" layoutY="399.0" />
-      <Label fx:id="weight0" layoutX="649.0" layoutY="399.0" />
-      <Label fx:id="Employee4" layoutX="441.0" layoutY="425.0" />
-      <Label fx:id="Birds" layoutX="549.0" layoutY="425.0" />
-      <Label fx:id="weight2" layoutX="649.0" layoutY="425.0" />
-      <Label fx:id="myEmployee" layoutX="441.0" layoutY="454.0" />
-      <Label fx:id="myStory" layoutX="542.0" layoutY="454.0" />
-      <Label fx:id="myWeight" layoutX="649.0" layoutY="454.0" />
-      <Label layoutX="458.0" layoutY="318.0" text="Name">
+      <Label fx:id="Employee1" layoutX="440.0" layoutY="409.0" />
+      <Label fx:id="Cats" layoutX="549.0" layoutY="409.0" />
+      <Label fx:id="weight4" layoutX="648.0" layoutY="409.0" />
+      <Label fx:id="Employee2" layoutX="440.0" layoutY="436.0" />
+      <Label fx:id="Dogs" layoutX="547.0" layoutY="437.0" />
+      <Label fx:id="weightSec4" layoutX="648.0" layoutY="436.0" />
+      <Label fx:id="Employee3" layoutX="440.0" layoutY="462.0" />
+      <Label fx:id="Fish" layoutX="550.0" layoutY="462.0" />
+      <Label fx:id="weight0" layoutX="648.0" layoutY="462.0" />
+      <Label fx:id="Employee4" layoutX="440.0" layoutY="488.0" />
+      <Label fx:id="Birds" layoutX="548.0" layoutY="488.0" />
+      <Label fx:id="weight2" layoutX="648.0" layoutY="488.0" />
+      <Label fx:id="myEmployee" layoutX="440.0" layoutY="517.0" />
+      <Label fx:id="myStory" layoutX="541.0" layoutY="517.0" />
+      <Label fx:id="myWeight" layoutX="648.0" layoutY="517.0" />
+      <Label layoutX="457.0" layoutY="381.0" text="Name">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="535.0" layoutY="317.0" text="User Story">
+      <Label layoutX="534.0" layoutY="380.0" text="User Story">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="633.0" layoutY="317.0" text="Weight">
+      <Label layoutX="632.0" layoutY="380.0" text="Weight">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="pushButton" layoutX="264.0" layoutY="344.0" mnemonicParsing="false" onAction="#pushStory" text="Push User Story">
+      <Button fx:id="pushButton" layoutX="261.0" layoutY="359.0" mnemonicParsing="false" onAction="#pushStory" text="Push User Story">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -109,7 +110,7 @@
          </font>
       </Button>
       <Label fx:id="nameValue" layoutX="137.0" layoutY="227.0" />
-      <Button fx:id="anomButton" layoutX="161.0" layoutY="346.0" mnemonicParsing="false" onAction="#anonymizeData" text="Anonymizer">
+      <Button fx:id="anomButton" layoutX="161.0" layoutY="359.0" mnemonicParsing="false" onAction="#anonymizeData" text="Anonymizer">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -119,12 +120,6 @@
       </Button>
       <Label fx:id="storyValue" layoutX="226.0" layoutY="227.0" />
       <Label fx:id="weightValue" layoutX="292.0" layoutY="227.0" />
-      <TableView layoutX="391.0" layoutY="137.0" prefHeight="148.0" prefWidth="277.0">
-        <columns>
-          <TableColumn prefWidth="207.0" text="user story" />
-          <TableColumn minWidth="8.0" prefWidth="67.0" text="weight" />
-        </columns>
-      </TableView>
       <Button fx:id="filterButton1" layoutX="556.0" layoutY="74.0" mnemonicParsing="false" onAction="#filterDetails" text="Filter keyword">
          <font>
             <Font size="13.0" />
@@ -158,5 +153,15 @@
             <Font size="13.0" />
          </font>
       </Button>
+      <VBox layoutX="431.0" layoutY="146.0" prefHeight="200.0" prefWidth="265.0">
+         <children>
+            <TableView fx:id="history_data" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="userstory_tab" prefWidth="198.0" text="User story" />
+                <TableColumn fx:id="weight_tab" minWidth="0.0" prefWidth="66.0" text="Weight" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

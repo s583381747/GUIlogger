@@ -1,21 +1,34 @@
 // Import necessary JavaFX classes and other dependencies
 package com.example.guilogger;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.attribute.UserPrincipal;
+import java.util.ResourceBundle;
 
 // Define the controller class for the PlanningPoker.fxml GUI
-public class PlanningPokerController {
+public class PlanningPokerController implements Initializable {
     @FXML
     private AnchorPane poker_main; // The main pane in the PlanningPoker.fxml scene
 
-    // Labels for various elements
+    @FXML
+    private TableView<StoryData> history_data;
+
+    @FXML
+    private TableColumn<StoryData, String> userstory_tab;
+
+    @FXML
+    private TableColumn<StoryData, Number> weight_tab;
+
     @FXML
     private Label Birds;
     @FXML
@@ -78,7 +91,7 @@ public class PlanningPokerController {
     // Event handler for the start button
     @FXML
     void start(ActionEvent event) {
-        // Initialize labels with data
+        // initialize labels with data
         Employee1.setText("Employee 1");
         Employee2.setText("Employee 2");
         Employee3.setText("Employee 3");
@@ -132,4 +145,21 @@ public class PlanningPokerController {
         // Switch to the TeamSharing.fxml scene
         new SceneSwitch(poker_main, "TeamSharing.fxml");
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Configure the columns to use the properties of the StoryData class
+        userstory_tab.setCellValueFactory(new PropertyValueFactory<>("userStory"));
+        weight_tab.setCellValueFactory(new PropertyValueFactory<>("weight"));
+
+        // Create a sample list of data
+        ObservableList<StoryData> data = FXCollections.observableArrayList(
+                new StoryData("Story 1", 5), // Example data
+                new StoryData("Story 2", 3)  // Example data
+        );
+
+        // Set the table's items to the sample data
+        history_data.setItems(data);
+    }
+
 }

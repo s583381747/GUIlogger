@@ -2,20 +2,22 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="poker_main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="674.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.guilogger.PlanningPokerController">
+<AnchorPane fx:id="poker_main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guilogger.PlanningPokerController">
    <children>
       <Label layoutX="272.0" layoutY="14.0" text="Planning Poker Console">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="dataButton" layoutX="44.0" layoutY="59.0" mnemonicParsing="false" onAction="#importData" text="Import Data" textAlignment="CENTER">
+      <Button fx:id="dataButton" layoutX="529.0" layoutY="34.0" mnemonicParsing="false" onAction="#importData" text="Import Historical  Data" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
          </padding>
@@ -23,14 +25,13 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Label layoutX="55.0" layoutY="95.0" text="User Story:">
+      <Label layoutX="57.0" layoutY="104.0" text="User Story:">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="190.0" text="Key Words:" />
-      <Label layoutX="55.0" layoutY="227.0" text="Team Entry:" />
-      <Button fx:id="filterButton" layoutX="46.0" layoutY="261.0" mnemonicParsing="false" onAction="#filterDetails" text="Filter Details">
+      <Label layoutX="55.0" layoutY="316.0" text="Team Entry:" />
+      <Button fx:id="filterButton" layoutX="57.0" layoutY="355.0" mnemonicParsing="false" onAction="#filterDetails" text="Filter Details">
          <font>
             <Font size="13.0" />
          </font>
@@ -38,7 +39,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Button>
-      <Button fx:id="backButton" layoutX="623.0" layoutY="432.0" mnemonicParsing="false" onAction="#back" text="Back">
+      <Button fx:id="backButton" layoutX="688.0" layoutY="497.0" mnemonicParsing="false" onAction="#back" text="Back">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -46,18 +47,17 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Label layoutX="378.0" layoutY="64.0" text="Historical Data:">
+      <Label layoutX="400.0" layoutY="112.0" text="Historical Data:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="380.0" layoutY="251.0" text="Team:">
+      <Label layoutX="414.0" layoutY="290.0" text="Team:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="keywordsField" layoutX="133.0" layoutY="186.0" prefHeight="25.0" prefWidth="225.0" />
-      <Button fx:id="startButton" layoutX="153.0" layoutY="371.0" mnemonicParsing="false" onAction="#start" text="Start Round">
+      <Button fx:id="startButton" layoutX="154.0" layoutY="458.0" mnemonicParsing="false" onAction="#start" text="Start Round">
          <opaqueInsets>
             <Insets bottom="10.0" left="5.0" right="10.0" top="5.0" />
          </opaqueInsets>
@@ -68,40 +68,39 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Button>
-      <TextArea layoutX="133.0" layoutY="95.0" prefHeight="79.0" prefWidth="225.0" />
       <Label fx:id="projectName" layoutX="399.0" layoutY="87.0" />
       <Label fx:id="dataFile" layoutX="505.0" layoutY="87.0" />
-      <Label fx:id="Employee1" layoutX="390.0" layoutY="298.0" />
-      <Label fx:id="Cats" layoutX="499.0" layoutY="298.0" />
-      <Label fx:id="weight4" layoutX="598.0" layoutY="298.0" />
-      <Label fx:id="Employee2" layoutX="390.0" layoutY="325.0" />
-      <Label fx:id="Dogs" layoutX="497.0" layoutY="326.0" />
-      <Label fx:id="weightSec4" layoutX="598.0" layoutY="325.0" />
-      <Label fx:id="Employee3" layoutX="390.0" layoutY="351.0" />
-      <Label fx:id="Fish" layoutX="500.0" layoutY="351.0" />
-      <Label fx:id="weight0" layoutX="598.0" layoutY="351.0" />
-      <Label fx:id="Employee4" layoutX="390.0" layoutY="377.0" />
-      <Label fx:id="Birds" layoutX="498.0" layoutY="377.0" />
-      <Label fx:id="weight2" layoutX="598.0" layoutY="377.0" />
-      <Label fx:id="myEmployee" layoutX="390.0" layoutY="406.0" />
-      <Label fx:id="myStory" layoutX="491.0" layoutY="406.0" />
-      <Label fx:id="myWeight" layoutX="598.0" layoutY="406.0" />
-      <Label layoutX="407.0" layoutY="270.0" text="Name">
+      <Label fx:id="Employee1" layoutX="441.0" layoutY="346.0" />
+      <Label fx:id="Cats" layoutX="550.0" layoutY="346.0" />
+      <Label fx:id="weight4" layoutX="649.0" layoutY="346.0" />
+      <Label fx:id="Employee2" layoutX="441.0" layoutY="373.0" />
+      <Label fx:id="Dogs" layoutX="548.0" layoutY="374.0" />
+      <Label fx:id="weightSec4" layoutX="649.0" layoutY="373.0" />
+      <Label fx:id="Employee3" layoutX="441.0" layoutY="399.0" />
+      <Label fx:id="Fish" layoutX="551.0" layoutY="399.0" />
+      <Label fx:id="weight0" layoutX="649.0" layoutY="399.0" />
+      <Label fx:id="Employee4" layoutX="441.0" layoutY="425.0" />
+      <Label fx:id="Birds" layoutX="549.0" layoutY="425.0" />
+      <Label fx:id="weight2" layoutX="649.0" layoutY="425.0" />
+      <Label fx:id="myEmployee" layoutX="441.0" layoutY="454.0" />
+      <Label fx:id="myStory" layoutX="542.0" layoutY="454.0" />
+      <Label fx:id="myWeight" layoutX="649.0" layoutY="454.0" />
+      <Label layoutX="458.0" layoutY="318.0" text="Name">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="484.0" layoutY="269.0" text="User Story">
+      <Label layoutX="535.0" layoutY="317.0" text="User Story">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="582.0" layoutY="269.0" text="Weight">
+      <Label layoutX="633.0" layoutY="317.0" text="Weight">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="pushButton" layoutX="256.0" layoutY="261.0" mnemonicParsing="false" onAction="#pushStory" text="Push User Story">
+      <Button fx:id="pushButton" layoutX="264.0" layoutY="344.0" mnemonicParsing="false" onAction="#pushStory" text="Push User Story">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -110,7 +109,7 @@
          </font>
       </Button>
       <Label fx:id="nameValue" layoutX="137.0" layoutY="227.0" />
-      <Button fx:id="anomButton" layoutX="153.0" layoutY="263.0" mnemonicParsing="false" onAction="#anonymizeData" text="Anonymizer">
+      <Button fx:id="anomButton" layoutX="161.0" layoutY="346.0" mnemonicParsing="false" onAction="#anonymizeData" text="Anonymizer">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -120,5 +119,44 @@
       </Button>
       <Label fx:id="storyValue" layoutX="226.0" layoutY="227.0" />
       <Label fx:id="weightValue" layoutX="292.0" layoutY="227.0" />
+      <TableView layoutX="391.0" layoutY="137.0" prefHeight="148.0" prefWidth="277.0">
+        <columns>
+          <TableColumn prefWidth="207.0" text="user story" />
+          <TableColumn minWidth="8.0" prefWidth="67.0" text="weight" />
+        </columns>
+      </TableView>
+      <Button fx:id="filterButton1" layoutX="556.0" layoutY="74.0" mnemonicParsing="false" onAction="#filterDetails" text="Filter keyword">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <TextField fx:id="keywordsField1" layoutX="451.0" layoutY="79.0" prefHeight="25.0" prefWidth="76.0" />
+      <Label layoutX="383.0" layoutY="83.0" text="Key Words:" />
+      <ComboBox layoutX="155.0" layoutY="92.0" prefWidth="150.0" />
+      <ComboBox layoutX="155.0" layoutY="170.0" prefWidth="150.0" />
+      <Label layoutX="65.0" layoutY="169.0" prefHeight="27.0" prefWidth="61.0" text="Effort">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="filterButton2" layoutX="143.0" layoutY="231.0" mnemonicParsing="false" onAction="#filterDetails" text="Submit">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <Button fx:id="anomButton1" layoutX="254.0" layoutY="261.0" mnemonicParsing="false" onAction="#anonymizeData" text="Anonymizer">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

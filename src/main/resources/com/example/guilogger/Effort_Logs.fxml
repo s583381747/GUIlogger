@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="effortloganchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guilogger.Effort_LogsController">
    <children>
       <Label alignment="CENTER" layoutX="11.0" layoutY="7.0" prefHeight="24.0" prefWidth="684.0" text="Effort Logs">
          <font>
@@ -17,19 +16,19 @@
          </font>
       </Label>
       <Label layoutX="16.0" layoutY="37.0" prefHeight="34.0" prefWidth="676.0" text="1. Select a Project from the drop down list below and click Submit to view the effort logs of the project." wrapText="true" />
-      <ChoiceBox layoutX="16.0" layoutY="84.0" prefWidth="150.0" />
-      <Button layoutX="227.0" layoutY="84.0" mnemonicParsing="false" text="Submit" />
-      <TableView layoutX="19.0" layoutY="124.0" prefHeight="370.0" prefWidth="664.0">
+      <ChoiceBox fx:id="list" layoutX="16.0" layoutY="84.0" prefWidth="150.0" />
+      <Button layoutX="227.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#submit" text="Submit" />
+      <TableView fx:id="effortTable" layoutX="19.0" layoutY="124.0" prefHeight="370.0" prefWidth="664.0">
         <columns>
-          <TableColumn prefWidth="46.0" text="Index" />
-          <TableColumn prefWidth="88.0" text="Date" />
-            <TableColumn prefWidth="86.0" text="Time Taken" />
-            <TableColumn prefWidth="123.0" text="Life Cycle Step" />
-            <TableColumn prefWidth="111.0" text="Effort Category" />
-            <TableColumn prefWidth="144.0" text="Deliverable" />
-            <TableColumn prefWidth="64.0" text="Effort " />
+          <TableColumn fx:id="index" prefWidth="46.0" text="Index" />
+          <TableColumn fx:id="date" prefWidth="88.0" text="Date" />
+            <TableColumn fx:id="time" prefWidth="86.0" text="Time Taken" />
+            <TableColumn fx:id="lifecyclestep" prefWidth="123.0" text="Life Cycle Step" />
+            <TableColumn fx:id="effortcategory" prefWidth="111.0" text="Effort Category" />
+            <TableColumn fx:id="deliverable" prefWidth="144.0" text="Deliverable" />
+            <TableColumn fx:id="effort" prefWidth="64.0" text="Effort " />
         </columns>
       </TableView>
-      <Button layoutX="623.0" layoutY="510.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="623.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" />
    </children>
 </AnchorPane>

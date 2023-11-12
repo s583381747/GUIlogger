@@ -52,13 +52,21 @@ public class Defect_LogsController implements Initializable {
 
     }
 
-    public ObservableList<DefectlogData> data;
+    public ObservableList<DefectlogData> defectlog;
 
     @FXML
     void submit(MouseEvent event) {
-        Data_controller dataController = new Data_controller();
-        dataController.populateTable(defeacttable);
+        String selectedProject = projectlist.getSelectionModel().getSelectedItem();
+        if ("PixelCraft".equals(selectedProject)) {
+            Data_controller dataController = new Data_controller();
+            dataController.initData();
+            defectlog = dataController.getDefectlog();
+            defeacttable.setItems(defectlog);
+        } else {
+            defeacttable.getItems().clear(); // Clear the table if it's not "PixelCraft"
+        }
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

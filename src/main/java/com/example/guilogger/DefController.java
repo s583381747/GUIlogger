@@ -107,13 +107,26 @@ public class DefController {
                 new DefData.EffortCategory("Category B", 2),
                 new DefData.EffortCategory("Category C", 3)
         );
-        effortcategoriestableeffortcategory.setCellValueFactory(new PropertyValueFactory<>("effortCategory"));
-        effortcategoriestableindex.setCellValueFactory(new PropertyValueFactory<>("index"));
+        interruptionsindex.setCellValueFactory(new PropertyValueFactory<>("index"));
+        interruptionsinterruptions.setCellValueFactory(new PropertyValueFactory<>("interruptions"));
         interruptions.getItems().addAll(
-                new DefData.EffortCategory("Category A", 1),
-                new DefData.EffortCategory("Category B", 2),
-                new DefData.EffortCategory("Category C", 3)
+                new DefData.Interruption(1, "Interruption 1"),
+                new DefData.Interruption(2, "Interruption 2"),
+                new DefData.Interruption(3, "Interruption 3")
         );
+
+        lifecyclesteptableindex.setCellValueFactory(new PropertyValueFactory<>("index"));
+        lifecyclesteptablelifecyclestep.setCellValueFactory(new PropertyValueFactory<>("lifecycleStep"));
+        lifecyclesteptableeffortcategory.setCellValueFactory(new PropertyValueFactory<>("effortCategory"));
+
+        // Add dummy data to the LifecycleStep table
+        lifecyclesteptable.getItems().addAll(
+                lifecyclesteptable.getItems().addAll(
+                        new DefData.LifecycleStep(1, "Lifecycle Step 1", "Effort Category A"),
+                        new DefData.LifecycleStep(2, "Lifecycle Step 2", "Effort Category B"),
+                        new DefData.LifecycleStep( "Lifecycle Step 3", "Effort Category C",1)
+                );
+
     }
 
 }

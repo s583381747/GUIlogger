@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import com.example.guilogger.Data_controller;
 
-public class Defect_LogsController implements Initializable {
+public class Defect_ConsoleController implements Initializable {
 
     @FXML
     private TableColumn<DefectlogData, String> change;
@@ -76,6 +76,9 @@ public class Defect_LogsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         defeacttable.setEditable(true);
         Data_controller dataController = new Data_controller();
+
+        setupEditableColumns();
+
         projectlist.getItems().addAll("PixelCraft", "WebFlow", "SwiftNote");
         // The PropertyValueFactory should match the property names in your DefectlogData class
         change.setCellValueFactory(new PropertyValueFactory<>("change"));
@@ -86,6 +89,28 @@ public class Defect_LogsController implements Initializable {
         required.setCellValueFactory(new PropertyValueFactory<>("required"));
     }
 
+    private void setupEditableColumns() {
+        setupEditableColumn(change, "change");
+        setupEditableColumn(detail, "detail");
+        setupEditableColumn(estimated, "estimated");
+        setupEditableColumn(index, "index");
+        setupEditableColumn(name, "name");
+        setupEditableColumn(required, "required");
+
+    }
+
+    private void setupEditableColumn(TableColumn<DefectlogData, String> column, String propertyName) {
+        column.setCellFactory(TextFieldTableCell.forTableColumn());
+        column.setOnEditCommit(event -> {
+            DefectlogData data = event.getRowValue();
+            switch (propertyName) {
+                case "change": data.setChange(event.getNewValue()); break;
+                case "detail": data.setDetail(event.getNewValue()); break;
+                case "estimated": data.setEstimated(event.getNewValue()); break;
+                // Add cases for other properties as needed
+            }
+        });
+    }
 
     public void update(MouseEvent mouseEvent) {
     }

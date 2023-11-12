@@ -9,13 +9,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 // Define the main class for the JavaFX application, which extends Application
-public class Effort_Log_EditorApplication extends Application {
+public class Defect_ConsoleApplication extends Application {
 
     // The start method is called when the application is launched
     @Override
     public void start(Stage stage) throws IOException {
         // Create an FXMLLoader to load the GUI layout from an FXML file
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Effort_Log_Editor.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Defect_Console.fxml"));
 
         // Create a Scene and load the GUI layout into it
         Scene scene = new Scene(fxmlLoader.load());

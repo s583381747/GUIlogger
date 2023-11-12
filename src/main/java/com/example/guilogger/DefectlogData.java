@@ -7,15 +7,15 @@ public class DefectlogData {
     private final SimpleStringProperty change;
     private final SimpleStringProperty detail;
     private final SimpleStringProperty estimated;
-    private final SimpleIntegerProperty index;
+    private final SimpleStringProperty index;
     private final SimpleStringProperty name;
     private final SimpleStringProperty required;
 
-    public DefectlogData(String change, String detail, String estimated, int index, String name, String required) {
+    public DefectlogData(String change, String detail, String estimated, String index, String name, String required) {
         this.change = new SimpleStringProperty(change);
         this.detail = new SimpleStringProperty(detail);
         this.estimated = new SimpleStringProperty(estimated);
-        this.index = new SimpleIntegerProperty(index);
+        this.index = new SimpleStringProperty(index);
         this.name = new SimpleStringProperty(name);
         this.required = new SimpleStringProperty(required);
     }
@@ -33,7 +33,7 @@ public class DefectlogData {
         return estimated.get();
     }
 
-    public int getIndex() {
+    public String getIndex() {
         return index.get();
     }
 
@@ -58,7 +58,7 @@ public class DefectlogData {
         this.estimated.set(estimated);
     }
 
-    public void setIndex(int index) {
+    public void setIndex(String index) {
         this.index.set(index);
     }
 
@@ -83,7 +83,7 @@ public class DefectlogData {
         return estimated;
     }
 
-    public SimpleIntegerProperty indexProperty() {
+    public SimpleStringProperty indexProperty() {
         return index;
     }
 

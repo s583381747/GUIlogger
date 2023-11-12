@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="936.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="6.0" layoutY="5.0" prefHeight="31.0" prefWidth="945.0" text="Definitions">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="36.0" prefHeight="31.0" prefWidth="62.0" text="Projects:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="29.0" layoutY="76.0" prefHeight="170.0" prefWidth="879.0">
+        <columns>
+          <TableColumn prefWidth="49.0" text="Index" />
+          <TableColumn minWidth="0.0" prefWidth="172.0" text="Project Name" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="1" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="2" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="3" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="4" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="5" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="6" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="7" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="8" />
+        </columns>
+      </TableView>
+      <Label layoutX="249.0" layoutY="36.0" prefHeight="31.0" prefWidth="103.0" text="Life Cycle Step: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="266.0" prefHeight="31.0" prefWidth="170.0" text="Specify the Life Cycle Steps:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="30.0" layoutY="313.0" prefHeight="452.0" prefWidth="422.0">
+        <columns>
+          <TableColumn prefWidth="54.0" text="Index" />
+          <TableColumn prefWidth="185.0" text="Life Cycle Step" />
+            <TableColumn prefWidth="94.0" text="Effort Category" />
+            <TableColumn prefWidth="87.0" text="Deliverable" />
+        </columns>
+      </TableView>
+      <Label layoutX="470.0" layoutY="266.0" prefHeight="31.0" prefWidth="110.0" text="Effort Categories: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="470.0" layoutY="313.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="50.0" text="Index" />
+          <TableColumn prefWidth="149.0" text="Effort Category" />
+        </columns>
+      </TableView>
+      <Label layoutX="691.0" layoutY="266.0" prefHeight="31.0" prefWidth="110.0" text="Deliverables:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="701.0" layoutY="313.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn prefWidth="44.0" text="Index" />
+            <TableColumn prefWidth="155.0" text="Deliverable" />
+         </columns>
+      </TableView>
+      <Label layoutX="470.0" layoutY="527.0" prefHeight="31.0" prefWidth="110.0" text="Plans: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="470.0" layoutY="566.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn prefWidth="50.0" text="Index" />
+            <TableColumn prefWidth="149.0" text="Plans" />
+         </columns>
+      </TableView>
+      <Label layoutX="701.0" layoutY="527.0" prefHeight="31.0" prefWidth="110.0" text="Interruptions: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="701.0" layoutY="566.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn prefWidth="50.0" text="Index" />
+            <TableColumn prefWidth="149.0" text="Interruptions" />
+         </columns>
+      </TableView>
+      <Button layoutX="857.0" layoutY="790.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

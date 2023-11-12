@@ -4,27 +4,27 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class EffortlogData {
-    private final SimpleIntegerProperty index;
+    private final SimpleStringProperty index;
     private final SimpleStringProperty date;
     private final SimpleStringProperty timeTaken;
     private final SimpleStringProperty lifeCycleStep;
     private final SimpleStringProperty effortCategory;
     private final SimpleStringProperty deliverable;
-    private final SimpleIntegerProperty effort;
+    private final SimpleStringProperty effort;
 
-    public EffortlogData(int index, String date, String timeTaken, String lifeCycleStep,
-                         String effortCategory, String deliverable, int effort) {
-        this.index = new SimpleIntegerProperty(index);
+    public EffortlogData(String index, String date, String timeTaken, String lifeCycleStep,
+                         String effortCategory, String deliverable, String effort) {
+        this.index = new SimpleStringProperty(index);
         this.date = new SimpleStringProperty(date);
         this.timeTaken = new SimpleStringProperty(timeTaken);
         this.lifeCycleStep = new SimpleStringProperty(lifeCycleStep);
         this.effortCategory = new SimpleStringProperty(effortCategory);
         this.deliverable = new SimpleStringProperty(deliverable);
-        this.effort = new SimpleIntegerProperty(effort);
+        this.effort = new SimpleStringProperty(effort);
     }
 
     // Getters
-    public int getIndex() {
+    public String getIndex() {
         return index.get();
     }
 
@@ -48,12 +48,12 @@ public class EffortlogData {
         return deliverable.get();
     }
 
-    public int getEffort() {
+    public String getEffort() {
         return effort.get();
     }
 
     // Setters
-    public void setIndex(int index) {
+    public void setIndex(String index) {
         this.index.set(index);
     }
 
@@ -77,12 +77,12 @@ public class EffortlogData {
         this.deliverable.set(deliverable);
     }
 
-    public void setEffort(int effort) {
+    public void setEffort(String effort) {
         this.effort.set(effort);
     }
 
     // Property methods
-    public SimpleIntegerProperty indexProperty() {
+    public SimpleStringProperty indexProperty() {
         return index;
     }
 
@@ -106,7 +106,7 @@ public class EffortlogData {
         return deliverable;
     }
 
-    public SimpleIntegerProperty effortProperty() {
+    public SimpleStringProperty effortProperty() {
         return effort;
     }
 }

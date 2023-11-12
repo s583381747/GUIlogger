@@ -10,6 +10,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
+
 public class Effort_LogsController {
 
     @FXML
@@ -47,8 +49,8 @@ public class Effort_LogsController {
 //    public ObservableList<EffortlogData> effortlog;
     private ObservableList<EffortlogData> effortlog;
     @FXML
-    void back(MouseEvent event) {
-        // Handle the back action
+    void back(MouseEvent event) throws IOException {
+        new SceneSwitch(effortloganchor, "hello-view.fxml");
     }
 
     @FXML

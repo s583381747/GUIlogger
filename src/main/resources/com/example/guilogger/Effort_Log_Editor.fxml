@@ -5,11 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="effortlogeditor_anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="effortlogeditor_anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guilogger.Effort_Log_EditorController">
    <children>
       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="29.0" prefWidth="731.0" text="Effort Log Editor">
          <font>
@@ -17,23 +16,21 @@
          </font>
       </Label>
       <Label layoutX="22.0" layoutY="43.0" prefHeight="35.0" prefWidth="719.0" text="1. To Edit a Log, kindly select the Project first from the below drop down menu. After done selecting, kindly hit the Submit button." />
-      <ComboBox fx:id="list" layoutX="29.0" layoutY="85.0" prefHeight="25.0" prefWidth="237.0" promptText="list" />
-      <Button layoutX="330.0" layoutY="85.0" mnemonicParsing="false" onMousePressed="#submit" text="Submit" />
-      <TableView fx:id="table" layoutX="15.0" layoutY="139.0" prefHeight="370.0" prefWidth="684.0">
+      <ComboBox fx:id="list" layoutX="29.0" layoutY="85.0" prefHeight="25.0" prefWidth="237.0" />
+      <Button layoutX="330.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#submit" onMousePressed="#submit" text="Submit" />
+      <TableView fx:id="effortTable" layoutX="15.0" layoutY="139.0" prefHeight="370.0" prefWidth="684.0">
         <columns>
           <TableColumn fx:id="index" prefWidth="59.0" text="Index" />
           <TableColumn fx:id="date" prefWidth="84.0" text="Date" />
             <TableColumn fx:id="time" prefWidth="88.0" text="Time Taken" />
             <TableColumn fx:id="lifecyclestep" prefWidth="133.0" text="Life Cycle Step" />
-            <TableColumn fx:id="category" prefWidth="105.0" text="Effort Category" />
+            <TableColumn fx:id="effortcategory" prefWidth="105.0" text="Effort Category" />
             <TableColumn fx:id="deliverable" prefWidth="154.0" text="Deliverable" />
             <TableColumn fx:id="effort" prefWidth="59.0" text="Effort" />
         </columns>
       </TableView>
-      <Label layoutX="15.0" layoutY="526.0" prefHeight="29.0" prefWidth="684.0" text="2. Now Kindly select an entry from the table and enter the changes in the text field below." wrapText="true" />
-      <TextField fx:id="update_filed" layoutX="29.0" layoutY="566.0" prefHeight="25.0" prefWidth="295.0" />
-      <Label layoutX="18.0" layoutY="603.0" prefHeight="29.0" prefWidth="684.0" text="3. If you are satisfied with the change you have made, kindly press the button below. " wrapText="true" />
-      <Button layoutX="29.0" layoutY="644.0" mnemonicParsing="false" onMouseClicked="#update" text="Update Effort Log" />
-      <Button layoutX="639.0" layoutY="657.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" />
+      <Label layoutX="18.0" layoutY="554.0" prefHeight="29.0" prefWidth="684.0" text="If you are satisfied with the change you have made, kindly press the button below. " wrapText="true" />
+      <Button layoutX="29.0" layoutY="603.0" mnemonicParsing="false" onMouseClicked="#update" text="Update Effort Log" />
+      <Button layoutX="640.0" layoutY="603.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" />
    </children>
 </AnchorPane>

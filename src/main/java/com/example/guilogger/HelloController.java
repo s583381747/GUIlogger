@@ -2,6 +2,8 @@
 package com.example.guilogger;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -17,6 +19,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 // Define the controller class for the JavaFX GUI
 public class HelloController implements Initializable {
+
+
     private Timer timer; // Timer for tracking time
     private AtomicLong startTime; // Time tracking variable
     @FXML
@@ -38,6 +42,16 @@ public class HelloController implements Initializable {
     private Label timer_field; // Label for displaying the timer
 
     // Event handler for the start activity button
+
+    @FXML
+    void defectog_button(MouseEvent event) throws IOException {
+        new SceneSwitch(mainScene,"Defect_Logs.fxml");
+    }
+
+    @FXML
+    void effortlog_button(MouseEvent event) throws IOException {
+        new SceneSwitch(mainScene,"Effort_Logs.fxml");
+    }
     @FXML
     void start_activity_button(MouseEvent event) {
         // Add code for starting an activity here
@@ -69,6 +83,7 @@ public class HelloController implements Initializable {
         // Exit the application
         Platform.exit();
     }
+    public ObservableList<DefectlogData> projecct1_data;
 
     // Event handler for the profile button
     @FXML
@@ -86,5 +101,14 @@ public class HelloController implements Initializable {
         life_cycle.getItems().addAll();
         deliverable.getItems().addAll();
         category.getItems().addAll();
+        projecct1_data = FXCollections.observableArrayList(
+                new DefectlogData("Header Misalignment", "The header on the homepage is misaligned with the page content", "2", 1, "Adjust CSS styling", "4"),
+                new DefectlogData("App Crash on Load", "Application crashes when trying to load more than 100 items at once", "2", 2, "Optimize loading routine", "4"),
+                new DefectlogData("Memory Leak", "Memory leak observed when processing large files", "8", 3, "Refactor file processing module", "9"),
+                new DefectlogData("Settings Not Saved", "User settings changes are not being saved intermittently", "3", 4, "Debug save function", "6"),
+                new DefectlogData("Authentication Flaw", "No authentication checks on the settings page", "6", 5, "Implement user authentication checks", "8")
+        );
+
+
     }
 }

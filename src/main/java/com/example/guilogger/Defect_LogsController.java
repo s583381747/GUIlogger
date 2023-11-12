@@ -1,4 +1,5 @@
 package com.example.guilogger;
+
 import javafx.scene.control.ComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
-import  com.example.guilogger.Data_controller;
+import com.example.guilogger.Data_controller;
+
 public class Defect_LogsController implements Initializable {
 
     @FXML
@@ -29,6 +31,7 @@ public class Defect_LogsController implements Initializable {
 
     @FXML
     private TableView<DefectlogData> defeacttable;
+
     @FXML
     private TableColumn<DefectlogData, String> detail;
 
@@ -48,16 +51,18 @@ public class Defect_LogsController implements Initializable {
     void back(MouseEvent event) {
 
     }
+
     public ObservableList<DefectlogData> data;
 
     @FXML
     void submit(MouseEvent event) {
-
+        Data_controller dataController = new Data_controller();
+        dataController.populateTable(defeacttable);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        projectlist.getItems().addAll("PixelCraft","WebFlow","SwiftNote");
+        projectlist.getItems().addAll("PixelCraft", "WebFlow", "SwiftNote");
         change.setCellValueFactory(new PropertyValueFactory<>("change"));
         detail.setCellValueFactory(new PropertyValueFactory<>("detail"));
         estimated.setCellValueFactory(new PropertyValueFactory<>("estimated"));
@@ -65,4 +70,5 @@ public class Defect_LogsController implements Initializable {
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         required.setCellValueFactory(new PropertyValueFactory<>("required"));
     }
+
 }

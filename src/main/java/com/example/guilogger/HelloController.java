@@ -101,7 +101,10 @@ public class HelloController implements Initializable {
     void effortlogeditor(MouseEvent event) throws IOException {
         new SceneSwitch(mainScene,"Effort_Log_Editor.fxml");
     }
-
+    @FXML
+    void defination(MouseEvent event) throws IOException {
+        new SceneSwitch(mainScene,"Def.fxml");
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialize the project ComboBox with project options

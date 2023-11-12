@@ -50,7 +50,7 @@
         <Button layoutX="24.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#stop_activity_button" prefHeight="30.0" prefWidth="150.0" text="Stop Activity " />
         <Button layoutX="38.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#effortlogeditor" prefHeight="30.0" prefWidth="122.0" text="Effort Log Editor" />
         <Button layoutX="196.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#defectlogconsole" prefHeight="30.0" prefWidth="135.0" text="Defect Log Console" />
-        <Button layoutX="362.0" layoutY="449.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="135.0" text="Definitions" />
+        <Button layoutX="362.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#defination" prefHeight="30.0" prefWidth="135.0" text="Definitions" />
         <Button layoutX="38.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#upload_to_cloud_button" prefHeight="30.0" prefWidth="135.0" text="Upload to Cloud" />
         <Button layoutX="196.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#team_sharing_button" prefHeight="30.0" prefWidth="135.0" text="Team Sharing" />
         <Button layoutX="362.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#defectog_button" prefHeight="30.0" prefWidth="135.0" text="Defect Logs" />

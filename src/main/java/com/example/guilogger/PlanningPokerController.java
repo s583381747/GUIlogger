@@ -1,165 +1,138 @@
-// Import necessary JavaFX classes and other dependencies
 package com.example.guilogger;
-
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.attribute.UserPrincipal;
-import java.util.ResourceBundle;
-
-// Define the controller class for the PlanningPoker.fxml GUI
 public class PlanningPokerController implements Initializable {
     @FXML
-    private AnchorPane poker_main; // The main pane in the PlanningPoker.fxml scene
-
-    @FXML
-    private TableView<StoryData> history_data;
-
-    @FXML
-    private TableColumn<StoryData, String> userstory_tab;
-
-    @FXML
-    private TableColumn<StoryData, Number> weight_tab;
-
-    @FXML
-    private Label Birds;
-    @FXML
-    private Label Cats;
-    @FXML
-    private Label Dogs;
-    @FXML
-    private Label Employee1;
-    @FXML
-    private Label Employee2;
-    @FXML
-    private Label Employee3;
-    @FXML
-    private Label Employee4;
-    @FXML
-    private Label Fish;
-
-    // Buttons for various actions
-    @FXML
     private Button anomButton;
+
     @FXML
     private Button backButton;
+
     @FXML
     private Button dataButton;
+
     @FXML
-    private Button filterButton;
+    private ComboBox<String> effortBox;
+
+    @FXML
+    private TextField keywordsField;
+
+    @FXML
+    private Label nameValue;
+
     @FXML
     private Button pushButton;
+
     @FXML
     private Button startButton;
 
-    // Labels and fields for displaying and entering data
-    @FXML
-    private Label dataFile;
-    @FXML
-    private TextField keywordsField;
-    @FXML
-    private Label myEmployee;
-    @FXML
-    private Label myStory;
-    @FXML
-    private Label myWeight;
-    @FXML
-    private Label nameValue;
-    @FXML
-    private Label projectName;
     @FXML
     private Label storyValue;
+
     @FXML
-    private Label weight0;
+    private Button submitButton;
+
     @FXML
-    private Label weight2;
-    @FXML
-    private Label weight4;
-    @FXML
-    private Label weightSec4;
+    private ComboBox<String> userBox;
+
     @FXML
     private Label weightValue;
 
-    // Event handler for the start button
     @FXML
-    void start(ActionEvent event) {
-        // initialize labels with data
-        Employee1.setText("Employee 1");
-        Employee2.setText("Employee 2");
-        Employee3.setText("Employee 3");
-        Employee4.setText("Employee 4");
-        Birds.setText("Birds");
-        Cats.setText("Cats");
-        Fish.setText("Fish");
-        Dogs.setText("Dogs");
-        weight0.setText("0");
-        weight2.setText("2");
-        weight4.setText("4");
-        weightSec4.setText("4");
-    }
+    private TableView<DefData.TeamEntry> teamtable;
 
-    // Event handler for the import data button
     @FXML
-    void importData(ActionEvent event) {
-        // Set project and data file names
-        projectName.setText("Project1");
-        dataFile.setText("File1");
-    }
+    private TableColumn<DefData.TeamEntry, String> teamtable_name;
 
-    // Event handler for the filter details button
     @FXML
-    void filterDetails(ActionEvent event) {
-        // Display filtered details
-        nameValue.setText("David Smith");
-        storyValue.setText("Rabbits");
-        weightValue.setText("3");
-    }
+    private TableColumn<DefData.TeamEntry, String> teamtable_userstory;
 
-    // Event handler for the push story button
     @FXML
-    void pushStory(ActionEvent event) {
-        // Update labels with pushed story details
-        myEmployee.setText("Employee 5");
-        myStory.setText("Rabbits");
-        myWeight.setText("3");
-    }
+    private TableColumn<DefData.TeamEntry, String> teamtable_effort;
 
-    // Event handler for the anonymize data button
     @FXML
-    void anonymizeData(ActionEvent event) {
-        // Anonymize data by changing the name value
-        nameValue.setText("Employee 5");
-    }
+    private TableView<DefData.HistoryEntry> historytable;
 
-    // Event handler for the back button
     @FXML
-    void back(ActionEvent event) throws IOException {
-        // Switch to the TeamSharing.fxml scene
-        new SceneSwitch(poker_main, "TeamSharing.fxml");
-    }
+    private TableColumn<DefData.HistoryEntry, String> historytable_userstory;
 
+    @FXML
+    private TableColumn<DefData.HistoryEntry, String> historytable_weight;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Configure the columns to use the properties of the StoryData class
-        userstory_tab.setCellValueFactory(new PropertyValueFactory<>("userStory"));
-        weight_tab.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        userBox.setItems(FXCollections.observableArrayList("Cars1", "Cars2", "Cars3"));
+        effortBox.setItems(FXCollections.observableArrayList("0", "1", "2", "3", "4"));
 
-        // Create a sample list of data
-        ObservableList<StoryData> data = FXCollections.observableArrayList(
-                new StoryData("Story 1", 5), // Example data
-                new StoryData("Story 2", 3)  // Example data
-        );
+        // Initialize teamtable columns
+        teamtable_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        teamtable_userstory.setCellValueFactory(new PropertyValueFactory<>("userStory"));
+        teamtable_effort.setCellValueFactory(new PropertyValueFactory<>("effort"));
 
-        // Set the table's items to the sample data
-        history_data.setItems(data);
+        // Initialize historytable columns
+        historytable_userstory.setCellValueFactory(new PropertyValueFactory<>("userStory"));
+        historytable_weight.setCellValueFactory(new PropertyValueFactory<>("weight"));
     }
 
+    @FXML
+    void startround(ActionEvent event) {
+        // Populate Team Table with dummy data
+        teamtable.getItems().clear();
+        teamtable.getItems().addAll(
+                new DefData.TeamEntry("Employee1", "Story A", "2"),
+                new DefData.TeamEntry("Employee2", "Story B", "3"),
+                new DefData.TeamEntry("Employee3", "Story C", "1")
+        );
+    }
+
+    @FXML
+    void importData(ActionEvent event) {
+        // Populate History Table with dummy data
+        historytable.getItems().clear();
+        historytable.getItems().addAll(
+                new DefData.HistoryEntry("Story X", "5"),
+                new DefData.HistoryEntry("Story Y", "8"),
+                new DefData.HistoryEntry("Story Z", "3")
+        );
+    }
+    
+    @FXML
+    void submitEntry(ActionEvent event) {
+    	nameValue.setText("David Smith");
+    	storyValue.setText("Cars 1");
+    	weightValue.setText("2");
+    }
+    
+    @FXML
+    void anonymizeData(ActionEvent event) {
+    	nameValue.setText("Employee 5");
+    }
+
+    @FXML
+    private AnchorPane poker_main;
+    @FXML
+    void pushStory(ActionEvent event) {
+        teamtable.getItems().addAll(
+        new DefData.TeamEntry("Employee5", "cars1", "2")
+        );
+    }
+
+
+    @FXML
+    void back(ActionEvent event) throws IOException {
+        new SceneSwitch(poker_main, "TeamSharing.fxml");
+    }
 }

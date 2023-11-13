@@ -47,7 +47,7 @@
         <columns>
           <TableColumn fx:id="lifecyclesteptableindex" prefWidth="54.0" text="Index" />
           <TableColumn fx:id="lifecyclesteptablelifecyclestep" prefWidth="185.0" text="Life Cycle Step" />
-            <TableColumn fx:id="lifecyclesteptableefffortcategory" prefWidth="94.0" text="Effort Category" />
+            <TableColumn fx:id="lifecyclesteptableeffortcategory" prefWidth="94.0" text="Effort Category" />
             <TableColumn fx:id="lifecyclesteptabledeliverable" prefWidth="87.0" text="Deliverable" />
         </columns>
       </TableView>

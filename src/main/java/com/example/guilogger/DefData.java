@@ -144,5 +144,46 @@ public class DefData {
             return two;
         }
     }
+    public static class TeamEntry {
+        private String name;
+        private String userStory;
+        private String effort;
+
+        public TeamEntry(String name, String userStory, String effort) {
+            this.name = name;
+            this.userStory = userStory;
+            this.effort = effort;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getUserStory() {
+            return userStory;
+        }
+
+        public String getEffort() {
+            return effort;
+        }
+    }
+
+    public static class HistoryEntry {
+        private String userStory;
+        private String weight;
+
+        public HistoryEntry(String userStory, String weight) {
+            this.userStory = userStory;
+            this.weight = weight;
+        }
+
+        public String getUserStory() {
+            return userStory;
+        }
+
+        public String getWeight() {
+            return weight;
+        }
+    }
 
 }

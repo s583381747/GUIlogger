@@ -5,8 +5,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 public class DefController {
+    @FXML
+    private AnchorPane anchor;
 
     @FXML
     private TableView<DefData.Deliverable> deliverabletable;
@@ -84,8 +89,8 @@ public class DefController {
     }
 
     @FXML
-    void back(MouseEvent event) {
-        // Your event handling code here
+    void back(MouseEvent event) throws IOException {
+        new SceneSwitch(anchor, "hello-view.fxml");
     }
 
     // Initialize the tables and add dummy data
@@ -109,7 +114,7 @@ public class DefController {
         );
 
         interruptionsindex.setCellValueFactory(new PropertyValueFactory<>("index"));
-        interruptionsinterruptions.setCellValueFactory(new PropertyValueFactory<>("interruption"));
+        interruptionsinterruptions.setCellValueFactory(new PropertyValueFactory<>("interruptions"));
 
         // Add dummy data to the Interruptions table
         interruptions.getItems().addAll(
@@ -121,8 +126,12 @@ public class DefController {
         lifecyclesteptableindex.setCellValueFactory(new PropertyValueFactory<>("index"));
         lifecyclesteptablelifecyclestep.setCellValueFactory(new PropertyValueFactory<>("lifecycleStep"));
         lifecyclesteptableeffortcategory.setCellValueFactory(new PropertyValueFactory<>("effortCategory"));
+        lifecyclesteptabledeliverable.setCellValueFactory(new PropertyValueFactory<>("deliverable"));
+        // Add dummy data to the LifecycleStep table
         lifecyclesteptable.getItems().addAll(
-                new DefData.LifecycleStep("deliverable", "effortcategory", 1, "3")
+                new DefData.LifecycleStep("1", "Analysis", 1, "Lifecycle Step 1"),
+                new DefData.LifecycleStep("2", "Development", 2, "Lifecycle Step 2"),
+                new DefData.LifecycleStep("3", "Deployment", 3, "Lifecycle Step 3")
         );
 
         plansindex.setCellValueFactory(new PropertyValueFactory<>("index"));
@@ -132,6 +141,7 @@ public class DefController {
                 new DefData.Plan(2, "Plan 2"),
                 new DefData.Plan(3, "Plan 3")
         );
+
         projecttablefour.setCellValueFactory(new PropertyValueFactory<>("four"));
         projecttableindex.setCellValueFactory(new PropertyValueFactory<>("index"));
         projecttablename.setCellValueFactory(new PropertyValueFactory<>("name"));

@@ -107,8 +107,11 @@ public class DefController {
                 new DefData.EffortCategory("Category B", 2),
                 new DefData.EffortCategory("Category C", 3)
         );
+
         interruptionsindex.setCellValueFactory(new PropertyValueFactory<>("index"));
-        interruptionsinterruptions.setCellValueFactory(new PropertyValueFactory<>("interruptions"));
+        interruptionsinterruptions.setCellValueFactory(new PropertyValueFactory<>("interruption"));
+
+        // Add dummy data to the Interruptions table
         interruptions.getItems().addAll(
                 new DefData.Interruption(1, "Interruption 1"),
                 new DefData.Interruption(2, "Interruption 2"),
@@ -118,15 +121,29 @@ public class DefController {
         lifecyclesteptableindex.setCellValueFactory(new PropertyValueFactory<>("index"));
         lifecyclesteptablelifecyclestep.setCellValueFactory(new PropertyValueFactory<>("lifecycleStep"));
         lifecyclesteptableeffortcategory.setCellValueFactory(new PropertyValueFactory<>("effortCategory"));
-
-        // Add dummy data to the LifecycleStep table
         lifecyclesteptable.getItems().addAll(
-                lifecyclesteptable.getItems().addAll(
-                        new DefData.LifecycleStep(1, "Lifecycle Step 1", "Effort Category A"),
-                        new DefData.LifecycleStep(2, "Lifecycle Step 2", "Effort Category B"),
-                        new DefData.LifecycleStep( "Lifecycle Step 3", "Effort Category C",1)
-                );
+                new DefData.LifecycleStep("deliverable", "effortcategory", 1, "3")
+        );
 
+        plansindex.setCellValueFactory(new PropertyValueFactory<>("index"));
+        plansplans.setCellValueFactory(new PropertyValueFactory<>("plans"));
+        plans.getItems().addAll(
+                new DefData.Plan(1, "Plan 1"),
+                new DefData.Plan(2, "Plan 2"),
+                new DefData.Plan(3, "Plan 3")
+        );
+        projecttablefour.setCellValueFactory(new PropertyValueFactory<>("four"));
+        projecttableindex.setCellValueFactory(new PropertyValueFactory<>("index"));
+        projecttablename.setCellValueFactory(new PropertyValueFactory<>("name"));
+        projecttableone.setCellValueFactory(new PropertyValueFactory<>("one"));
+        projecttablethree.setCellValueFactory(new PropertyValueFactory<>("three"));
+        projecttabletwo.setCellValueFactory(new PropertyValueFactory<>("two"));
+
+        // Add dummy data to the Project table
+        projecttable.getItems().addAll(
+                new DefData.Project(4, 1, "Project A", 10, 20, 30),
+                new DefData.Project(5, 2, "Project B", 11, 21, 31),
+                new DefData.Project(6, 3, "Project C", 12, 22, 32)
+        );
     }
-
 }

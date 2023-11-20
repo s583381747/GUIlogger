@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.UUID;
 
 
-//authership bu Neil Sang
 public class Anonymizer {
     // Generate a unique anonymous role ID
     public String generateRoleID() {
@@ -16,10 +15,10 @@ public class Anonymizer {
 
 class EffortLogger {
     Anonymizer anonymizer = new Anonymizer();
-    private HashMap<String, List<String>> effortData = new HashMap<>();
-    private HashMap<String, String> roleMapping = new HashMap<>();
-    private HashMap<String, String> usernameMapping = new HashMap<>();
-    private HashMap<String, String> passwordMapping = new HashMap<>();
+    HashMap<String, List<String>> effortData = new HashMap<>();
+    HashMap<String, String> roleMapping = new HashMap<>();
+    HashMap<String, String> usernameMapping = new HashMap<>();
+    HashMap<String, String> passwordMapping = new HashMap<>();
     private Random random = new Random();
 
     // Generate a 5-digit unique username
@@ -39,8 +38,8 @@ class EffortLogger {
 
     // Set username for a given roleID
     public void setUsername(String roleID) {
-        String username = generateUsername();
-        usernameMapping.put(roleID, username);
+            String username = generateUsername();
+            usernameMapping.put(roleID, username);
     }
 
     // Set password for a given roleID

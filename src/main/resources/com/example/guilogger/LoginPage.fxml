@@ -18,13 +18,13 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="197.0" layoutY="132.0" />
+      <TextField fx:id="username" layoutX="197.0" layoutY="132.0" />
       <Label layoutX="102.0" layoutY="189.0" prefHeight="35.0" prefWidth="85.0" text="Password:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="197.0" layoutY="194.0" />
+      <TextField fx:id="password" layoutX="197.0" layoutY="194.0" />
       <Label layoutX="19.0" layoutY="50.0" prefHeight="35.0" prefWidth="448.0" text="Enter your Username and Password Below to Access the Effort Logger Console: " />
       <Button layoutX="156.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#log_in_button" prefHeight="35.0" prefWidth="149.0" text="Log-in">
          <font>
@@ -33,5 +33,6 @@
       </Button>
       <Label layoutX="25.0" layoutY="332.0" prefHeight="25.0" prefWidth="177.0" text="Click Button Below for Support" />
       <Button layoutX="25.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Forgot Password" />
+      <Label fx:id="pwstate" layoutX="354.0" layoutY="261.0" />
    </children>
 </AnchorPane>

@@ -23,6 +23,7 @@ public class EffortlogData {
         this.effort = new SimpleStringProperty(effort);
     }
 
+
     // Getters
     public String getIndex() {
         return index.get();

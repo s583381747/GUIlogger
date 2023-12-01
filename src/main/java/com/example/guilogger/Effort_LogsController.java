@@ -53,12 +53,31 @@ public class Effort_LogsController {
         new SceneSwitch(effortloganchor, "hello-view.fxml");
     }
 
+    HelloController hello2 = new HelloController();
+
+    //public int indexl = hello2.counter1 + 3;
+
     @FXML
     void submit(MouseEvent event) {
         String selectedProject = list.getSelectionModel().getSelectedItem();
         if ("PixelCraft".equals(selectedProject)) {
             Data_controller dataController = new Data_controller();
             dataController.initData(); // Make sure this method exists in your Data_controller
+
+            effortlog = dataController.getEffortlog(); // And this getter should return the effort data
+
+            Effort_Log_EditorController eff = new Effort_Log_EditorController();
+            if(eff.flag == true)
+            {
+                dataController.editEffort();
+            }
+
+            HelloController hello1 = new HelloController();
+            if(hello1.flag1 == true)
+            {
+                dataController.addData();
+            }
+
             effortlog = dataController.getEffortlog(); // And this getter should return the effort data
             effortTable.setItems(effortlog);
         } else {

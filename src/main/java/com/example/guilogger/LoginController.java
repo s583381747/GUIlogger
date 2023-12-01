@@ -25,7 +25,7 @@ public class LoginController {
     @FXML
     void log_in_button(MouseEvent event) {
         // Compare strings using .equals()
-        if ("Admin".equals(username.getText()) && "password".equals(password.getText())) {
+        if ("Demo".equals(username.getText()) && "password".equals(password.getText())) {
             try {
                 // Switch scene here (assuming SceneSwitch is a valid class with a valid method)
                 new SceneSwitch(loginScene, "hello-view.fxml");

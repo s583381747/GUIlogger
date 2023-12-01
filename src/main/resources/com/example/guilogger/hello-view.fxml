@@ -27,25 +27,25 @@
                 <Font name="Times New Roman Bold" size="15.0" />
             </font>
         </Label>
-        <ComboBox fx:id="project" layoutX="24.0" layoutY="266.0" prefHeight="27.0" prefWidth="187.0" promptText="Development Project" />
-        <ComboBox fx:id="life_cycle" layoutX="258.0" layoutY="266.0" prefHeight="26.0" prefWidth="187.0" promptText="Planning" />
+        <ComboBox fx:id="project" layoutX="24.0" layoutY="266.0" prefHeight="27.0" prefWidth="187.0" promptText="Select" />
+        <ComboBox fx:id="life_cycle" layoutX="258.0" layoutY="266.0" prefHeight="26.0" prefWidth="187.0" promptText="Select" />
         <Label layoutX="254.0" layoutY="231.0" prefHeight="27.0" prefWidth="116.0" text="Life Cycle Step:">
             <font>
                 <Font name="Times New Roman Bold" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="24.0" layoutY="315.0" prefHeight="30.0" prefWidth="110.0" text="Effort Category:">
+        <Label layoutX="25.0" layoutY="315.0" prefHeight="30.0" prefWidth="110.0" text="Effort Category:">
             <font>
                 <Font name="Times New Roman Bold" size="14.0" />
             </font>
         </Label>
-        <ComboBox fx:id="category" layoutX="24.0" layoutY="351.0" prefWidth="150.0" promptText="Plan" />
-        <Label layoutX="254.0" layoutY="317.0" prefHeight="26.0" prefWidth="97.0" text="Deliverable:">
+        <ComboBox fx:id="category" layoutX="27.0" layoutY="351.0" prefHeight="25.0" prefWidth="122.0" promptText="Select" />
+        <Label layoutX="198.0" layoutY="317.0" prefHeight="26.0" prefWidth="97.0" text="Deliverable:">
             <font>
-                <Font name="System Bold" size="14.0" />
+                <Font name="Times New Roman Bold" size="14.0" />
             </font>
         </Label>
-        <ComboBox fx:id="deliverable" layoutX="256.0" layoutY="351.0" prefWidth="150.0" promptText="Deliverable" />
+        <ComboBox fx:id="deliverable" layoutX="198.0" layoutY="351.0" prefHeight="25.0" prefWidth="150.0" promptText="Select a Category" />
         <Label layoutX="24.0" layoutY="393.0" prefHeight="49.0" prefWidth="460.0" text="3. Press Stop Activity Button below to generate an effort log entry using attributes mentioned above." wrapText="true" />
         <Button layoutX="24.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#stop_activity_button" prefHeight="30.0" prefWidth="150.0" text="Stop Activity " />
         <Button layoutX="38.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#effortlogeditor" prefHeight="30.0" prefWidth="122.0" text="Effort Log Editor" />
@@ -59,7 +59,7 @@
                 <MenuItem mnemonicParsing="false" text="My Profile" />
             </items>
         </MenuButton>
-        <Label alignment="CENTER" layoutX="24.0" layoutY="49.0" prefHeight="30.0" prefWidth="482.0" text="Clock is Running" textFill="RED">
+        <Label fx:id="timerstatus" alignment="CENTER" layoutX="24.0" layoutY="49.0" prefHeight="30.0" prefWidth="482.0" text="TImer not running" textFill="RED">
             <font>
                 <Font size="14.0" />
             </font>
@@ -77,5 +77,11 @@
       <Button layoutX="471.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#quit_button" text="Quit" />
       <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#profile_button" prefHeight="25.0" prefWidth="71.0" text="My Profile" />
       <Button layoutX="362.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#effortlog_button" prefHeight="30.0" prefWidth="135.0" text="Effort Logs" />
+      <Label layoutX="375.0" layoutY="317.0" prefHeight="26.0" prefWidth="97.0" text="Effort:">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="effort" layoutX="375.0" layoutY="351.0" prefHeight="25.0" prefWidth="122.0" promptText="Select" />
     </children>
 </AnchorPane>

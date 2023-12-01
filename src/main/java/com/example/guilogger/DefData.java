@@ -54,38 +54,38 @@ public class DefData {
             return interruptions;
         }
     }
-        public static class LifecycleStep {
-            private String deliverable;
-            private String effortCategory;
-            private int index;
-            private String lifecycleStep;
+    public static class LifecycleStep {
+        private String deliverable;
+        private String effortCategory;
+        private int index;
+        private String lifecycleStep;
 
-            public LifecycleStep(String deliverable, String effortCategory, int index, String lifecycleStep) {
-                this.deliverable = deliverable;
-                this.effortCategory = effortCategory;
-                this.index = index;
-                this.lifecycleStep = lifecycleStep;
-            }
-
-            public String getDeliverable() {
-                return deliverable;
-            }
-
-            public String getEffortCategory() {
-                return effortCategory;
-            }
-
-            public int getIndex() {
-                return index;
-            }
-
-            public String getLifecycleStep() {
-                return lifecycleStep;
-            }
+        public LifecycleStep(String deliverable, String effortCategory, int index, String lifecycleStep) {
+            this.deliverable = deliverable;
+            this.effortCategory = effortCategory;
+            this.index = index;
+            this.lifecycleStep = lifecycleStep;
         }
 
+        public String getDeliverable() {
+            return deliverable;
+        }
 
-        public static class Plan {
+        public String getEffortCategory() {
+            return effortCategory;
+        }
+
+        public int getIndex() {
+            return index;
+        }
+
+        public String getLifecycleStep() {
+            return lifecycleStep;
+        }
+    }
+
+
+    public static class Plan {
         private int index;
         private String plans;
 

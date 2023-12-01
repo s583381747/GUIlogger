@@ -55,6 +55,18 @@ public class Effort_Log_EditorController {
 
     private ObservableList<EffortlogData> effortlog;
 
+    public static boolean flag = false;
+
+    public static String var;
+    public static String t;
+    public static String life;
+    public static String efc;
+    public static String del;
+    public static String efv;
+    public static String ind;
+
+    public static int ind2;
+
     @FXML
     void back(MouseEvent event) throws IOException {
         new SceneSwitch(effortlogeditor_anchor, "hello-view.fxml");
@@ -66,6 +78,12 @@ public class Effort_Log_EditorController {
         if ("PixelCraft".equals(selectedProject)) {
             Data_controller dataController = new Data_controller();
             dataController.initData(); // Make sure this method exists in your Data_controller
+
+            if(flag == true)
+            {
+                dataController.editEffort();
+            }
+
             effortlog = dataController.getEffortlog(); // And this getter should return the effort data
             effortTable.setItems(effortlog);
         } else {
@@ -119,11 +137,21 @@ public class Effort_Log_EditorController {
                 case "deliverable": data.setDeliverable(event.getNewValue()); break;
                 // Add cases for other properties as needed
             }
+
+            var = data.getDate();
+            t = data.getTimeTaken();
+            life = data.getLifeCycleStep();
+            efc = data.getEffortCategory();
+            del=data.getDeliverable();
+            efv = data.getEffort();
+            ind = data.getIndex();
+            ind2 = Integer.parseInt(ind);
         });
     }
 
 
     public void update(MouseEvent mouseEvent) {
+        flag = true;
     }
 }
 

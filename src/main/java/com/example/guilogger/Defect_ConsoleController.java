@@ -20,6 +20,11 @@ import com.example.guilogger.Data_controller;
 
 public class Defect_ConsoleController implements Initializable {
 
+    public static boolean flag2 = false;
+
+    public static String change1, detail1, estimated1, index1, name1, required1;
+    public static int ind1;
+
     @FXML
     private TableColumn<DefectlogData, String> change;
 
@@ -56,14 +61,30 @@ public class Defect_ConsoleController implements Initializable {
 
     }
 
+    @FXML
+    void addLog(MouseEvent event){
+        Data_controller dataController = new Data_controller();
+
+        dataController.initData();
+
+        defectlog = dataController.getDefectlog();
+        int size = defectlog.size();
+
+        defectlog.add(size, new DefectlogData("Change", "Detail", "Estimated Effort", ""+(size+1), "Name", "Required Effort"));
+
+        defectlog = dataController.getDefectlog();
+        defeacttable.setItems(defectlog);
+    }
+
     public ObservableList<DefectlogData> defectlog;
+
+    int i = 0;
 
     @FXML
     void submit(MouseEvent event) {
+        Data_controller dataController = new Data_controller();
         String selectedProject = projectlist.getSelectionModel().getSelectedItem();
         if ("PixelCraft".equals(selectedProject)) {
-            Data_controller dataController = new Data_controller();
-            dataController.initData();
             defectlog = dataController.getDefectlog();
             defeacttable.setItems(defectlog);
         } else {
@@ -107,11 +128,23 @@ public class Defect_ConsoleController implements Initializable {
                 case "change": data.setChange(event.getNewValue()); break;
                 case "detail": data.setDetail(event.getNewValue()); break;
                 case "estimated": data.setEstimated(event.getNewValue()); break;
+                case "index": data.setIndex(event.getNewValue()); break;
+                case "name": data.setName(event.getNewValue()); break;
+                case "required": data.setRequired(event.getNewValue()); break;
                 // Add cases for other properties as needed
             }
+
+            change1 = data.getChange();
+            detail1 = data.getDetail();
+            estimated1 = data.getEstimated();
+            index1 = data.getIndex();
+            ind1 = Integer.parseInt(index1);
+            name1 = data.getName();
+            required1 = data.getRequired();
         });
     }
 
     public void update(MouseEvent mouseEvent) {
+        flag2 = true;
     }
 }

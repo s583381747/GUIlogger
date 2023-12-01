@@ -8,28 +8,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="defectloganchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guilogger.Defect_ConsoleController">
-   <children>
-      <Label alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="25.0" prefWidth="747.0" text="Defect Console">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="23.0" layoutY="53.0" prefHeight="47.0" prefWidth="733.0" text="1. Please select the project below for which you would like to edit or create a defect log and press the Search button to display all the defect logs for that project." wrapText="true" />
-      <ComboBox fx:id="projectlist" layoutX="23.0" layoutY="112.0" prefWidth="150.0" />
-      <TableView fx:id="defeacttable" layoutX="22.0" layoutY="237.0" prefHeight="455.0" prefWidth="724.0">
-        <columns>
-          <TableColumn fx:id="index" prefWidth="46.0" text="Index" />
-          <TableColumn fx:id="name" prefWidth="100.0" text="Name" />
-            <TableColumn fx:id="detail" prefWidth="222.0" text="Details" />
-            <TableColumn fx:id="change" prefWidth="162.0" text="Strategy Taken" />
-            <TableColumn fx:id="estimated" prefWidth="98.0" text="Estimated Effort" />
-            <TableColumn fx:id="required" prefWidth="94.0" text="Required Effort" />
-        </columns>
-      </TableView>
-      <Label layoutX="22.0" layoutY="148.0" prefHeight="25.0" prefWidth="724.0" text="3. If you are satisfied with the changes you have made, kindly press the button below." />
-      <Button layoutX="23.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#update" prefHeight="25.0" prefWidth="150.0" text="Update Defect Log" />
-      <Button layoutX="699.0" layoutY="701.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" />
-      <Button layoutX="212.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#submit" text="Search" />
-   </children>
+<AnchorPane fx:id="defectloganchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="879.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guilogger.Defect_ConsoleController">
+    <children>
+        <Label alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="25.0" prefWidth="747.0" text="Defect Console">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="23.0" layoutY="53.0" prefHeight="47.0" prefWidth="733.0" text="1. Please select the project below for which you would like to edit or create a defect log and press the Search button to display all the defect logs for that project." wrapText="true" />
+        <ComboBox fx:id="projectlist" layoutX="23.0" layoutY="112.0" prefWidth="150.0" />
+        <TableView fx:id="defeacttable" layoutX="19.0" layoutY="359.0" prefHeight="455.0" prefWidth="724.0">
+            <columns>
+                <TableColumn fx:id="index" prefWidth="46.0" text="Index" />
+                <TableColumn fx:id="name" prefWidth="100.0" text="Name" />
+                <TableColumn fx:id="detail" prefWidth="222.0" text="Details" />
+                <TableColumn fx:id="change" prefWidth="162.0" text="Strategy Taken" />
+                <TableColumn fx:id="estimated" prefWidth="98.0" text="Estimated Effort" />
+                <TableColumn fx:id="required" prefWidth="94.0" text="Required Effort" />
+            </columns>
+        </TableView>
+        <Label layoutX="22.0" layoutY="271.0" prefHeight="25.0" prefWidth="724.0" text="3. If you are satisfied with the changes you have made, kindly press the button below." />
+        <Button layoutX="23.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#update" prefHeight="25.0" prefWidth="150.0" text="Update Defect Log" />
+        <Button layoutX="697.0" layoutY="834.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" />
+        <Button layoutX="212.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#submit" text="Search" />
+        <Button layoutX="23.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#addLog" text="Add a New Entry" />
+        <Label layoutX="23.0" layoutY="159.0" prefHeight="25.0" prefWidth="724.0" text="2. To make a new entry, kindly press the button below and a new blank entry will be added to the defect log table below. " />
+        <Label layoutX="23.0" layoutY="237.0" prefHeight="25.0" prefWidth="724.0" text="Note: To add information, click on each cell and enter the information. Once done, kindly click the Update Defect Log button." />
+    </children>
 </AnchorPane>

@@ -64,6 +64,13 @@ public class Defect_LogsController implements Initializable {
         if ("PixelCraft".equals(selectedProject)) {
             Data_controller dataController = new Data_controller();
             dataController.initData();
+
+            Defect_ConsoleController def1 = new Defect_ConsoleController();
+            if(def1.flag2 == true)
+            {
+                dataController.editData();
+            }
+
             defectlog = dataController.getDefectlog();
             defeacttable.setItems(defectlog);
         } else {
